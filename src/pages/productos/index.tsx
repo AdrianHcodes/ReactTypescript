@@ -6,20 +6,13 @@ import { ProductType } from "@/modules/producto/types/productTypes";
 import { Box, Pagination, Stack, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+//import { CircularProgress } from "@mui/material";
+
+
+import SelectCategorias from "./selectCategorias";
 
 const DEFAULT_LIMIT = 10;
 const DEFAULT_PAGE = 1;
-
-// "total": 194,
-// "skip": 0,
-
-//skip->pagina
-//   0->1
-//   10->2
-//   20->3
-
-// totalPaginas = total/limite        totalPaginas = 194/10 = 19.4
-// skip         = (pagina-1)*limite   skip =(3-1)*10 = 20
 
 const calcularTotalPaginas = (total: number, limite: number) => {
   return Math.ceil(total / limite);
@@ -62,56 +55,60 @@ const Productos = () => {
   }, [pagina, busqueda]);
 
   return (
-    <MainLayout titulo="Productos">
-      <Box mb={4}>
-        <Typography variant="subtitle1" fontWeight={"bold"}>
-          Results
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Check each product page for other buying options
-        </Typography>
-      </Box>
-      {loading && <Typography>Cargando productos...</Typography>}
-      {!loading && (
-        <>
-          <Stack spacing={4}>
-            {productos.map((producto) => (
-              <CardProducto
-                key={producto.id}
-                producto={producto}
-                onClick={(id) => {
-                  router.push(`/productos/${id}`);
-                }}
-                onAddToCart={(producto) => {
-                  agregarProducto({
-                    id: producto.id,
-                    title: producto.title,
-                    price: producto.price,
-                    image: producto.thumbnail,
-                    quantity: 1,
-                  });
-                }}
-              />
-            ))}
-          </Stack>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              py: 4,
-            }}
-          >
-            <Pagination
-              count={totalPaginas}
-              variant="outlined"
-              shape="rounded"
-              onChange={(e, pagina) => setPagina(pagina)}
-            />
-          </Box>
-        </>
-      )}
-    </MainLayout>
-  );
-};
+  <MainLayout titulo="Productos">
+    {/* Select para elegir categoría */}
+    <SelectCategorias />
 
+    <Box mb={4}>
+      <Typography variant="subtitle1" fontWeight={"bold"}>
+        Resultados
+      </Typography>
+      <Typography variant="body2" color="text.secondary">
+        Check each product page for other buying options
+      </Typography>
+    </Box>
+
+    {loading && <Typography>Cargando productos...</Typography>}
+
+    {!loading && (
+      <>
+        <Stack spacing={4}>
+          {productos.map((producto) => (
+            <CardProducto
+              key={producto.id}
+              producto={producto}
+              onClick={(id) => {
+                router.push(`/productos/${id}`);
+              }}
+              onAddToCart={(producto) => {
+                agregarProducto({
+                  id: producto.id,
+                  title: producto.title,
+                  price: producto.price,
+                  image: producto.thumbnail,
+                  quantity: 1,
+                });
+              }}
+            />
+          ))}
+        </Stack>
+
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            py: 4,
+          }}
+        >
+          <Pagination
+            count={totalPaginas}
+            variant="outlined"
+            shape="rounded"
+            onChange={(e, pagina) => setPagina(pagina)}
+          />
+        </Box>
+      </>
+    )}
+  </MainLayout>
+);}
 export default Productos;

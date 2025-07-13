@@ -1,5 +1,6 @@
-import { Box, Typography, Select, MenuItem, IconButton } from "@mui/material";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+//import { Box, Typography, Select, MenuItem, IconButton } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+///import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import Image from "next/image";
 import React from "react";
 import { CartProductType } from "../types/cartProductTypes";
