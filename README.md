@@ -1,40 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# ReactTypescript
 
-## Getting Started
+Este proyecto es un **eCommerce Frontend** desarrollado con **React**, **TypeScript** y **Material-UI (MUI)**, que consume datos de una API pública (`dummyjson.com`). Incluye funcionalidades como:
 
-First, run the development server:
+- Listado de productos con paginación y búsqueda.
+- Filtrado por categorías.
+- Detalle de producto con selección de cantidad y carrito de compras.
+- Manejo de estado para carrito usando hooks personalizados.
+- Rutas dinámicas con Next.js.
+
+---
+
+## Tecnologías usadas
+
+- React 18
+- TypeScript
+- Next.js
+- Material-UI (MUI)
+- Fetch API para consumir datos
+- Git y GitHub para control de versiones
+
+---
+
+## Instalación
+
+1. Clonar el repositorio
+
+```bash
+git clone https://github.com/AdrianHcodes/ReactTypescript.git
+```
+
+2. Instalar dependencias
+
+```bash
+npm install
+```
+
+3. Ejecutar la app localmente
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre tu navegador en [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Estructura del proyecto
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+- `/pages` - Rutas de la aplicación (Next.js)
+- `/components` - Componentes reutilizables
+- `/modules/producto` - Módulo productos con tipos, componentes y lógica
+- `/hooks` - Hooks personalizados para búsqueda y carrito
+- `/public` - Archivos estáticos
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Uso
 
-To learn more about Next.js, take a look at the following resources:
+- En la página principal puedes buscar productos o elegir una categoría.
+- Al seleccionar una categoría se muestran productos con paginación.
+- Puedes hacer click en un producto para ver el detalle.
+- Agrega productos al carrito y controla cantidades.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contribuciones
 
-## Deploy on Vercel
+Si deseas contribuir, por favor abre un issue o un pull request. ¡Todas las contribuciones son bienvenidas!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## Licencia
+
+MIT License © 2025 AdrianHcodes
+
+---
+
+## Contacto
+
+Adrián Huarahuara  
+[GitHub](https://github.com/AdrianHcodes)  
+[Email](adriano721.ah@gmail.com)
